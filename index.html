@@ -98,7 +98,7 @@
 	</div>
 </nav>
 
-<section class="hero">
+<section class="hero hero-section">
 
 	<h1 class="hero-title-for-robots-only-because-googles-description-is-wrong">
 		<img src="assets/arielek-logo-1024.jpg" alt="ARIELEK Logo">
@@ -158,9 +158,10 @@
 	<div class="games">
 
 		<div class="game">
-			<div class="img-shine wip"><img src="assets/number_machine/box.jpg" alt="Number Machine Boxart"></div>
+			<a href="#number-machine"  class="img-shine"><img src="assets/number_machine/box.jpg" alt="Number Machine Boxart" aria-label="Scroll down to Number Machine section"></a>
+			
 			<strong class="game-title">Number Machine</strong>
-			<p class="game-desc">Open-ended factory and automation game with math mechanics. Design, build, and optimize machines that automatically assemble and deliver numerical structures.</p>
+			<p class="game-desc">Open-ended factory and automation game with math mechanics. Design, build, and optimize factories that automatically assemble and deliver complex numerical structures. Inspired by Opus Magnum and Infinifactory.</p>
 		</div>
 		
 		<div class="game">
@@ -171,6 +172,61 @@
 	</div>
 	<div class="mask bottom"></div>
 </section>
+
+
+
+
+<section class="number-machine section-padding" id="number-machine" >
+
+	<img src="assets/number_machine/logo.png" class="game-logo" alt="Number Machine Logo">
+	
+	<div class="spacer"></div>
+
+	
+	<div class="media-grid pswp-gallery pswp-gallery--single-column" id="nm-gallery">
+		<div class="media-item media-item-steamwidget">
+			<iframe title="Wishlist Number Machine on Steam" src="https://store.steampowered.com/widget/2231090/" frameborder="0" width="900" height="190"></iframe>
+		</div>
+		
+		<a href="assets/number_machine/screen1.jpg" 
+			class="media-item media-item-screen1"
+			data-pswp-width="1920" 
+			data-pswp-height="1080" 
+			target="_blank">
+			<img src="assets/number_machine/screen1t.jpg" alt="Number Machine Screenshot" />
+		</a>
+		
+		<a href="assets/number_machine/screen2.jpg" 
+			class="media-item media-item-screen2"
+			data-pswp-width="1920" 
+			data-pswp-height="1080" 
+			target="_blank">
+			<img src="assets/number_machine/screen2t.jpg" alt="Number Machine Screenshot" />
+		</a>
+		
+		<a href="assets/number_machine/screen3.jpg" 
+			class="media-item media-item-screen3"
+			data-pswp-width="1920" 
+			data-pswp-height="1080" 
+			target="_blank">
+			<img src="assets/number_machine/screen3t.jpg" alt="Number Machine Screenshot" />
+		</a>
+		
+		<a href="assets/number_machine/screen4.jpg" 
+			class="media-item media-item-screen4"
+			data-pswp-width="1920" 
+			data-pswp-height="1080" 
+			target="_blank">
+			<img src="assets/number_machine/screen4t.jpg" alt="Number Machine Screenshot" />
+		</a>
+	</div>
+
+	<div class="spacer"></div>
+	
+	<div class="mask bottom"></div>
+
+</section>
+
 
 <section class="pftr section-padding" id="please-fix-the-road" >
 
@@ -194,7 +250,7 @@
 	<div class="spacer"></div>
 	
 	<div class="media-grid pswp-gallery pswp-gallery--single-column" id="pftr-gallery">
-		<div class="media-item-video">
+		<div class="media-item media-item-video">
 			<iframe title="Please Fix The Road Release Trailer" width="1280" height="720" class="video-player" src="https://www.youtube.com/embed/JJq2q4DLrJg?wmode=opaque&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
 		</div>
 		
@@ -202,7 +258,7 @@
 		
 		
 		<a href="assets/please/screen1.jpg" 
-			class="media-item-screen1"
+			class="media-item media-item-screen1"
 			data-pswp-width="1920" 
 			data-pswp-height="1080" 
 			target="_blank">
@@ -210,7 +266,7 @@
 		</a>
 		
 		<a href="assets/please/screen2.jpg" 
-			class="media-item-screen2"
+			class="media-item media-item-screen2"
 			data-pswp-width="1920" 
 			data-pswp-height="1080" 
 			target="_blank">
@@ -218,7 +274,7 @@
 		</a>
 		
 		<a href="assets/please/screen3.jpg" 
-			class="media-item-screen3"
+			class="media-item media-item-screen3"
 			data-pswp-width="1920" 
 			data-pswp-height="1080" 
 			target="_blank">
@@ -226,7 +282,7 @@
 		</a>
 		
 		<a href="assets/please/screen4.jpg" 
-			class="media-item-screen4"
+			class="media-item media-item-screen4"
 			data-pswp-width="1920" 
 			data-pswp-height="1080" 
 			target="_blank">
@@ -266,12 +322,20 @@
 
 <script type="module">
 import PhotoSwipeLightbox from './photoswipe/photoswipe-lightbox.esm.js';
-const lightbox = new PhotoSwipeLightbox({
+const pftr = new PhotoSwipeLightbox({
   gallery: '#pftr-gallery',
   children: 'a',
   pswpModule: () => import('./photoswipe/photoswipe.esm.js')
 });
-lightbox.init();
+pftr.init();
+
+const nm = new PhotoSwipeLightbox({
+  gallery: '#nm-gallery',
+  children: 'a',
+  pswpModule: () => import('./photoswipe/photoswipe.esm.js')
+});
+nm.init();
+
 </script>
 
 </body>

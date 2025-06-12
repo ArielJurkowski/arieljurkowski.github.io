@@ -473,6 +473,10 @@ section {
 	background-image: url("assets/please/bg.jpg");
 }
 
+.number-machine {
+	--section-bg: #FFE715;
+}
+
 .spacer {
 	height: 1px;
 	margin: 15px var(--page-padding);
@@ -503,7 +507,7 @@ section {
 }
 
 @media screen and (min-width: 900px) {
-	.media-grid  {
+	.pftr .media-grid  {
 		grid-template-columns: 4.29fr 1fr;
 		grid-template-areas:
 		"v s1"
@@ -513,13 +517,24 @@ section {
 	}
 }
 
-.media-grid > * {
+.media-item {
 	width: 100%;
 	aspect-ratio: 16/9;
 	box-shadow: 0 3px 10px #0007;
 	background-color: #0007;
 	border-radius: 8px;
 	overflow: hidden;
+}
+
+.number-machine .media-item {
+	box-shadow: 0 4px 10px #000C;
+}
+
+.number-machine .media-item-steamwidget {
+	aspect-ratio: initial;
+	height: 188px;
+	background-color: initial;
+	box-shadow: initial;
 }
 
 .media-grid img {
@@ -534,12 +549,12 @@ section {
 	}
 }
 
-.media-item-video {
+.media-item-video, .media-item-steamwidget {
 	grid-area: v;
 	position: relative;
 }
 
-.media-item-video iframe {
+.media-item-video iframe, .media-item-steamwidget iframe {
 	position: absolute;
 	top: 0;
 	left: 0;

@@ -505,6 +505,7 @@ section {
 .pftr .media-grid {
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas:
+		"w w"
 		"v v"
 		"s1 s2"
 		"s3 s4";
@@ -522,6 +523,7 @@ section {
 	.pftr .media-grid  {
 		grid-template-columns: 4.29fr 1fr;
 		grid-template-areas:
+		"w w"
 		"v s1"
 		"v s2"
 		"v s3"

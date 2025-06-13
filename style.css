@@ -490,6 +490,8 @@ section {
 	}
 }
 
+/* ========================================================= MEDIA GRID ========================================================= */
+/* ========================================================= MEDIA GRID ========================================================= */
 
 .media-grid {
 	--grid-gap: 10px;
@@ -498,12 +500,22 @@ section {
 	max-width: calc(var(--page-width) + var(--page-padding) * 2);
 	display: grid;
 	grid-gap: 10px;
+}
+
+.pftr .media-grid {
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas:
 		"v v"
 		"s1 s2"
 		"s3 s4";
-	
+}
+
+.number-machine .media-grid {
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+		"w w"
+		"s1 s2"
+		"s3 s4";
 }
 
 @media screen and (min-width: 900px) {
@@ -515,26 +527,34 @@ section {
 		"v s3"
 		"v s4";
 	}
+	
+	.number-machine .media-grid  {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-areas:
+			"w w w w"
+			"s1 s2 s3 s4";
+	}
 }
 
 .media-item {
 	width: 100%;
-	aspect-ratio: 16/9;
-	box-shadow: 0 3px 10px #0007;
+	aspect-ratio: 16/9;	
+	filter: drop-shadow(0 4px 5px #0007);
 	background-color: #0007;
 	border-radius: 8px;
 	overflow: hidden;
+	position: relative;
 }
 
 .number-machine .media-item {
-	box-shadow: 0 4px 10px #000C;
+	filter: drop-shadow(0 4px 10px #000C);
 }
 
-.number-machine .media-item-steamwidget {
+.media-item.media-item-steamwidget {
 	aspect-ratio: initial;
 	height: 188px;
 	background-color: initial;
-	box-shadow: initial;
+	filter: drop-shadow(0 4px 10px #000C);
 }
 
 .media-grid img {
@@ -543,23 +563,27 @@ section {
 	width: 100%;
 }
 
+.media-item iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
 @media (hover: hover) and (pointer: fine) { 
 	.media-grid img:hover {
 		filter: contrast(1.25);
 	}
 }
 
-.media-item-video, .media-item-steamwidget {
+.media-item-video {
 	grid-area: v;
-	position: relative;
 }
 
-.media-item-video iframe, .media-item-steamwidget iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+.media-item-steamwidget {
+	grid-area: w;
 }
 
 .media-item-screen1 {
@@ -577,6 +601,9 @@ section {
 .media-item-screen4 {
 	grid-area: s4;
 }
+
+
+
 
 .stores {
 	--gap: 30px;

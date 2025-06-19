@@ -502,7 +502,7 @@ section {
 	grid-gap: 10px;
 }
 
-.pftr .media-grid {
+.media-grid {
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas:
 		"w w"
@@ -511,16 +511,8 @@ section {
 		"s3 s4";
 }
 
-.number-machine .media-grid {
-	grid-template-columns: 1fr 1fr;
-	grid-template-areas:
-		"w w"
-		"s1 s2"
-		"s3 s4";
-}
-
 @media screen and (min-width: 900px) {
-	.pftr .media-grid  {
+	.media-grid  {
 		grid-template-columns: 4.29fr 1fr;
 		grid-template-areas:
 		"w w"
@@ -528,13 +520,6 @@ section {
 		"v s2"
 		"v s3"
 		"v s4";
-	}
-	
-	.number-machine .media-grid  {
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		grid-template-areas:
-			"w w w w"
-			"s1 s2 s3 s4";
 	}
 }
 

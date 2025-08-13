@@ -163,6 +163,17 @@ section {
 	padding: 0 var(--page-padding);
 }
 
+section:not(:last-of-type) {
+	mask: url(assets/mask.svg) 100% calc(100% + 10px) repeat-x, linear-gradient(#000 0 0);
+	mask-composite: exclude;
+	margin-bottom: -20px;
+	
+	animation-name: mask-anim;
+	animation-duration: 9s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
 .hero {
 	background-color: #141312;
 	padding: calc(8rem + 40px) 0 5rem 0;
@@ -281,41 +292,6 @@ section {
 	top: 50%;
 	transform: translate(-50%,-50%);
 	background-attachment: fixed;
-}
-
-.mask {
-	background-color: var(--section-bg);
-	height: 30px;
-	mask-image: url("assets/mask.svg");
-	mask-repeat: repeat-x;
-	-webkit-mask-image: url("assets/mask.svg");
-	-webkit-mask-repeat: repeat-x;
-	width: 100%;
-	position: absolute;
-	top: -26px;
-	left: 0;
-	right: 0;
-	overflow: hidden;
-	z-index: 1;
-	
-	animation-name: mask-anim;
-	animation-duration: 9s;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
-}
-
-.mask.mask-mini {
-	transform: scaleY(0.5) translateY(8px)
-}
-
-.mask.mask-reverse {
-	transform: scaleX(-1);
-}
-
-.mask.bottom {
-	transform: rotate(180deg);
-	bottom: -26px;
-	top: auto;
 }
 
 .games-section {
@@ -475,7 +451,33 @@ section {
 
 .number-machine {
 	--section-bg: #FFE715;
+	background-image: url("assets/number_machine/bg.jpg");
+	background-position: 50% 50%;
+	background-size: cover;
 }
+
+.number-machine .game-logo {
+	margin: -75px;
+}
+
+@media screen and (max-width: 700px) {
+.number-machine .game-logo {
+	margin: -55px;
+}
+}
+
+@media screen and (max-width: 450px) {
+.number-machine .game-logo {
+	margin: -40px;
+}
+}
+
+@media screen and (max-width: 350px) {
+.number-machine .game-logo {
+	margin: -30px;
+}
+}
+
 
 .spacer {
 	height: 1px;
@@ -839,7 +841,7 @@ section {
 
 .newsletter {
 	--section-bg: #1c2737;
-	padding: 70px 0 90px;
+	padding: 70px 0 70px;
 }
 
 #mc_embed_signup {
